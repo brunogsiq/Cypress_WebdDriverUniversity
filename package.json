@@ -10,7 +10,8 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "cypress": "^13.17.0"
+    "cypress": "^13.17.0",
+    "qa_cypress_webddriveruniversity": "file:"
   },
   "devDependencies": {
     "cypress-wait-until": "^3.0.2"
