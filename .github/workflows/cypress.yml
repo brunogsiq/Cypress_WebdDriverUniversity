@@ -38,7 +38,13 @@ jobs:
 
       - name: Gerar relatório HTML unificado
         run: |
-          npx mochawesome-merge cypress/reports/*.json > mochawesome.json
+          echo "📁 Listando arquivos JSON disponíveis:"
+          ls -la cypress/reports/mochawesome-report/
+          
+          echo "📦 Mesclando JSONs..."
+          npx mochawesome-merge cypress/reports/mochawesome-report/*.json > mochawesome.json
+      
+          echo "🧾 Gerando HTML unificado..."
           npx marge mochawesome.json --reportDir=cypress/reports/mochawesome-report --reportFilename=index.html
   
       # ✅ Separando os uploads de relatórios e vídeos corretamente:
