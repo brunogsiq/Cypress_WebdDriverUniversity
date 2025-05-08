@@ -6,9 +6,9 @@ module.exports = defineConfig(
     viewportHeight: 800,
     video: true,
     chromeWebSecurity: false,
-    reporter: "mochawesome",
+    reporter: "cypress-mochawesome-reporter",
     reporterOptions: {
-        reportDir: 'cypress/report',
+        reportDir: 'cypress/reports/mochawesome-report',
         overwrite: true,
         html: true,
         json: false,
@@ -21,7 +21,7 @@ module.exports = defineConfig(
         baseUrl: "https://webdriveruniversity.com/index.html",
         //Aqui ficarão todos os meus testes:
         setupNodeEvents(on, config) {
-          // implement node event listeners here
+            require('cypress-mochawesome-reporter/plugin')(on);
         },
     },
 });
