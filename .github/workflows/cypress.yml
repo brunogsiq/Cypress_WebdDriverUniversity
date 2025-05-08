@@ -35,17 +35,6 @@ jobs:
         uses: cypress-io/github-action@v6
         with:
           spec: "cypress/e2e/**/*.cy.js"  # Executa todos os testes dentro da pasta e2e
-
-      - name: Gerar relatório HTML unificado
-        run: |
-          echo "📁 Listando arquivos JSON disponíveis:"
-          ls -la cypress/reports/mochawesome-report/
-          
-          echo "📦 Mesclando JSONs..."
-          npx mochawesome-merge cypress/reports/mochawesome-report/*.json > mochawesome.json
-      
-          echo "🧾 Gerando HTML unificado..."
-          npx marge mochawesome.json --reportDir=cypress/reports/mochawesome-report --reportFilename=index.html
   
       # ✅ Separando os uploads de relatórios e vídeos corretamente:
       - name: Publicar Relatório de Testes

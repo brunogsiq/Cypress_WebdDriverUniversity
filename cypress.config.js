@@ -11,7 +11,7 @@ module.exports = defineConfig(
         reportDir: 'cypress/reports/mochawesome-report/',
         overwrite: true,
         html: true,
-        json: true,
+        json: false,
         timestamp: 'dd-mm-yyyy_HH-MM-ss'
     },
     e2e: {
